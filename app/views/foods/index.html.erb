@@ -1,1 +1,15 @@
-<h1>Hello</h1>
+<h1>Total Items Returned: <%= @foods.count %></h1>
+<% counter = 0 %>
+<% until counter = 10 %>
+  <div class="foods">
+  <h3><% @foods.each do |food| %></h3>
+    <ul>
+      <li><%= food.code %></li>
+      <li><%= food.description %></li>
+      <li><%= food.brand_owner %></li>
+      <li><%= food.ingredients %></li>
+    </ul>
+    <% counter += 1 %>
+  <% end %>
+  </div>
+<% end %>

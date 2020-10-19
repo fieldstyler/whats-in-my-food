@@ -11,17 +11,17 @@ RSpec.describe 'Food Search Index Page' do
     expect(current_path).to eq('/foods')
   end
 
-  xit 'can see total number of items returned by search' do
-    expect(page).to have_content("Total Items Returned: ")
+  it 'can see total number of items returned by search' do
+    expect(page).to have_content("Total Items Returned: 50")
   end
 
-  xit 'can see a list of ten foods that contain sweet potatoes' do
-    within(".foods") do
+  it 'can see a list of ten foods that contain sweet potatoes' do
+    within("#foods") do
       expect(page).to have_css('ul', :count => 10)
     end
   end
 
-  xit 'for each food, can see GTIN/UPC code, description, Brand Owner, and ingredients' do
+  it 'for each food, can see GTIN/UPC code, description, Brand Owner, and ingredients' do
     within(".foods") do
       expect(page).to have_css('.code')
       expect('.code').to_not be_empty
